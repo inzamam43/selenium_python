@@ -1,0 +1,34 @@
+{
+  "contact": {
+    "email_or_phone": "testuser@example.com"
+  },
+  "delivery": {
+    "country": "Pakistan",
+    "first_name": "Ali",
+    "last_name": "Khan",
+    "address": "123 Model Town",
+    "apartment": "Apt 4B",
+    "city": "Lahore",
+    "postal_code": "54000",
+    "save_info": true
+  },
+  "shipping_method": {
+    "type": "Standard",
+    "cost": "FREE"
+  },
+  "payment": {
+    "method": "Credit card",
+    "card_number": "4111111111111111",
+    "expiration_date": "12/30",
+    "security_code": "123",
+    "name_on_card": "Ali Khan",
+    "billing_same_as_shipping": true
+  },
+  "summary": {
+    "product_name": "Short Sleeve T Shirt",
+    "product_price": "Rs 9,999,999.00",
+    "shipping": "FREE",
+    "estimated_taxes": "Rs 1,599,999.84",
+    "total": "Rs 11,599,998.84"
+  }
+}

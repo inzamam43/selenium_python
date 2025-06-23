@@ -1,0 +1,17 @@
+[
+  {
+    "product": {
+      "name": "Short Sleeve T Shirt",
+      "price": "Rs.9,999,999.00 PKR",
+      "quantity": 1,
+      "description": "A nice T Shirt for summer",
+      "buttons": {
+        "add_to_cart": "Add to cart",
+        "buy_it_now": "Buy it now"
+      }
+    },
+    "store": {
+      "name": "MY STORE"
+    }
+  }
+]
