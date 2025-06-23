@@ -1,7 +1,7 @@
 # tests/test_homepage.py
 import time
 
-def test_homepage_title(home_page,product_page,cart_page):
+def test_homepage_title(home_page,product_page,cart_page,checkout_page):
     time.sleep(2)  # Optional; use WebDriverWait in real tests
     assert "Best Store" in home_page.get_title()
     home_page.click_catalog()
@@ -14,6 +14,9 @@ def test_homepage_title(home_page,product_page,cart_page):
     cart_page.verify_product_name()
     cart_page.view_cart()
     cart_page.cart_checkout()
+
+    checkout_page.email_address()
+    checkout_page.select_country()
 
     
 

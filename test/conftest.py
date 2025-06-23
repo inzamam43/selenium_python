@@ -7,6 +7,7 @@ from selenium.webdriver.common.by import By
 from pages.home_page import HomePage
 from pages.product_page import Product
 from pages.cart_page import Cart
+from pages.checkout_page import Checkout
 from dotenv import load_dotenv
 import os
 
@@ -24,6 +25,10 @@ def product_page(browser):
 @pytest.fixture
 def cart_page(browser):
     return Cart(browser)
+
+@pytest.fixture
+def checkout_page(browser):
+    return Checkout(browser)
 
 
 
@@ -54,8 +59,6 @@ def sign_in(browser):
         browser.get(os.getenv("base_url"))  
         browser.find_element(By.XPATH ,"(//*[name()='svg'][@class='icon icon-account'])[2]").click()
         browser.find_element(By.CSS_SELECTOR, "#email").send_keys(email_address)
-        # browser.find_element(By.ID, "username").send_keys("testuser123")
-        # browser.find_element(By.ID, "password").send_keys("StrongPass123!")
         browser.find_element(By.CSS_SELECTOR, "button[name='commit']").click()
 
         # Step 3: Wait for incoming email
@@ -73,10 +76,10 @@ def sign_in(browser):
         # Step 4: Extract link from email
         match = re.search(r'https://[^\s]+', email.body)
         if match:
-            verification_link = match.group(0)
-            print(f"🔗 Verification link found: {verification_link}")
-            browser.get(verification_link)
+            Otp = match.group(0)
+            print(f"🔗 Otp found: {Otp}")
+            browser.get(Otp)
         else:
-            raise Exception("No verification link found in email body.")
+            raise Exception("No Otp found in email body.")
 
         yield email_address  # You can return email for later use if needed

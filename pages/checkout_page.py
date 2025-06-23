@@ -12,12 +12,13 @@ class Checkout:
 
     
     def email_address(self):
-        self.driver.find_element(By.XPATH ,"(//input[@id='email'])[1]")
+        select_element = self.driver.find_element(By.XPATH, "(//select[starts-with(@id, 'Select')])[1]")
+        select_element.send_keys('abc@emai.com')
         
     
     def select_country(self):
         # XPath that matches any select with id starting with "Select"
-        select_element = self.driver.driver.find_element(By.XPATH, "(//select[starts-with(@id, 'Select')])[1]")
+        select_element = self.driver.find_element(By.XPATH, "(//select[starts-with(@id, 'Select')])[1]")
 
         select = Select(select_element) 
         country = self.driver.find_element(By.CSS_SELECTOR, 'option[value=PK]')
